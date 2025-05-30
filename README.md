@@ -1,5 +1,6 @@
 # *Sobre
-xxxxxx
+Sistema desenvolvido em Java com tecnologias legado seguindo o padrão MVC, com JSPs, Servlets e criptografia. Foram utilizadas tecnologias legado para evitar abstrações por fins de estudo.  
+Este readme serve como guia para desenvolvimento, referência futura e organização pessoal.
 
 # *Tecnologias utilizadas
 
@@ -45,3 +46,18 @@ startup.bat
 Parar a execução
 shutdown.bat
 
+
+## Estrutura do Projeto (Padrão MVC)
+
+src/
+├── controller/ # Servlets e lógica de controle
+├── model/ # Classes de negócio e conexão com o banco
+├── view/ # Arquivos JSP
+├── util/ # Utilitários como criptografia
+└── Main.java # Se necessário, ponto de entrada
+## 📄 Modelagem Inicial (Classes e Funções)
+## 🔐 Estruturas de Criptografia
+## 📦 Dependências Maven
+## 🔧 Scripts SQL
+  criação de database dentro de pasta sql no caminho:
+📚 Referências
