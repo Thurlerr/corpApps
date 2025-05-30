@@ -3,11 +3,11 @@ xxxxxx
 
 # *Tecnologias utilizadas
 
-JDK 21 (Kit de Desenvolvimento Java).
-Maven 3.9.9 (Ferramenta de gerenciamento de projetos e dependências).
-Tomcat 10.1.39 (Servidor web e contêiner de servlets e JSPs).
-MySQL (XAMPP) (Sistema de Gerenciamento de Banco de Dados).
-VSCode + Extension Pack for Java para o VSCode.
+- JDK 21 (Kit de Desenvolvimento Java).
+- Maven 3.9.9 (Ferramenta de gerenciamento de projetos e dependências).
+- Tomcat 10.1.39 (Servidor web e contêiner de servlets e JSPs).
+- MySQL (XAMPP) (Sistema de Gerenciamento de Banco de Dados).
+- VSCode + Extension Pack for Java para o VSCode.
 
 Como rodar o projeto
 
