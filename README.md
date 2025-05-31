@@ -51,7 +51,7 @@ src/
 ├── model/ # Classes de negócio e conexão com o banco
 ├── view/ # Arquivos JSP
 ├── util/ # Utilitários como criptografia
-└── Main.java # Se necessário, ponto de entrada
+└── Main.java # ponto de entrada
 ## 📄 Modelagem Inicial (Classes e Funções)
 ## 🔐 Estruturas de Criptografia
 ## 📦 Dependências Maven
