@@ -7,33 +7,18 @@ Este readme serve como guia para desenvolvimento, referência futura e organiza�
 - JDK 21 (Kit de Desenvolvimento Java).
 - Maven 3.9.9 (Ferramenta de gerenciamento de projetos e dependências).
 - Tomcat 10.1.39 (Servidor web e contêiner de servlets e JSPs).
-- MySQL (XAMPP) (Sistema de Gerenciamento de Banco de Dados).
+- MySQL (XAMPP para uso local) (Sistema de Gerenciamento de Banco de Dados).
 - VSCode + Extension Pack for Java para o VSCode.
 
 Como rodar o projeto
 
-Para facilitar configurações que serão mostradas a seguir, sugiro que a seguinte estrutura de diretórios seja seguida: 
-Geral: c:\dev\pac2025
-Maven: c:\dev\pac2025\maven
-Tomcat: c:\dev\pac2025\tomcat
+Pré-requisitos
+- Java JDK 21 instalado e configurado (java -version).
+- Maven 3.9.9 instalado (mvn -version).
+- Apache Tomcat 10.1.39 instalado.
+- MySQL rodando (local ou remoto), com as credenciais e banco de dados criados conforme o script em /sql/ CHANGE//
 
-Para que o sistema operacional e os programas saibam onde encontrar os arquivos e executáveis necessários para o projeto funcionar corretamente, é necessário configurar as Variáveis de Ambiente.
-
-No Windows:
-- Pesquisar por Editar variaveis de ambiente do sistema.
-- Adicionar as Variáveis:
-
-JAVA_HOME c:\Program Files\Java\jdk-21
-MAVEN_HOME c:\dev\pac\2025\maven
-CATALINA_HOME c:\dev\pac\2025\tomcat
-
-Dentro da variável já existente " Path " , adicionar os seguintes caminhos:
-
-c:\Program Files\Java\jdk-21\bin
-c:\dev\pac\2025\maven\bin
-c:\dev\pac\2025\tomcat\bin
-
-Verificação do ambiente através do cmd:
+Verificação do ambiente através do terminal:
 
 java -version
 javac -version
@@ -45,6 +30,18 @@ No Terminal, execute
 startup.bat
 Parar a execução
 shutdown.bat
+
+Após instalar as tecnologias da aba pré-requisitos e clonar o repositório:
+
+### 1- Configure o banco de dados
+- Crie o banco de dados usando o script SQL na pasta /sql/.
+- Atualize as credenciais de conexão no arquivo responsável DBConnection.java CHANGE//
+### 2- Buildar e compilar com o Maven
+- Compile o projeto com o Maven (mvn clean package no terminal da sua IDE com a pasta do projeto aberto)
+### 3- Deploy no Tomcat: 
+- O comando mvn clean package gera um arquivo .war dentro de /target . Copie o arquivo war para webapps/ localizada na pasta de instalação do Tomcat. CHANGE//
+### 4- Acessar no navegador
+com o Tomcat levantado, (startup.bat no windows no seu terminal), acesse http://localhost:8080/solucred para acessar o sistema.
 
 
 ## Estrutura do Projeto (Padrão MVC)
