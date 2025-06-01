@@ -7,5 +7,9 @@ public class Test {
 
 
         System.out.println(gordola.getId());
+
+        Emprestimo empDoGordola = new Emprestimo(gordola, 900.00, 10);
+
+    empDoGordola.simularEmprestimo(10.0);
     }
 }
