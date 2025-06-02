@@ -21,7 +21,6 @@ public class Cliente {
         this.emprestimos = new ArrayList<>();
     };
 
-
     public void adicionarEmprestimo (Emprestimo emprestimo) {
         emprestimos.add(emprestimo);
     }
