@@ -50,4 +50,6 @@ public class Emprestimo {
         
     }
     //essa é a função que deve ser chamada quando concordo com simular emprestimo. Ela deve utilizar os dados que foram passados no construtor e o calculo da simulação
+
+    //formula correta
 }
