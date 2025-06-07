@@ -4,12 +4,12 @@ import java.util.List;
 
 public class Cliente {
     public static int contadorId = 0;
-    private int id;
+    private final int id;
     private String nome = "";
     private String cpf = "";
     private double renda = 0.0;
-    private boolean empAtivo = false;
-    private List<Emprestimo> emprestimos;
+    private final boolean empAtivo = false; //não é usado?
+    private final List<Emprestimo> emprestimos;
 
 
     public Cliente (String nome, String cpf, double renda) {
@@ -26,42 +26,39 @@ public class Cliente {
     }
 
     public List<Emprestimo> getEmprestimos() {
-        return emprestimos;
+        return this.emprestimos;
     }
 
+    public void verDadosEmprestimo(){
+        if (emprestimos.isEmpty()){
+            System.out.println("Nenhum empréstimo registrado para o cliente.");
+        }else{
+            for (Emprestimo emp : emprestimos) {
+                System.out.println(emp.getNomeBanco());
+                System.out.println(emp.getValorDesejado());
+                System.out.println(emp.getParcelas());
+                System.out.println(emp.getCET());
+                System.out.println(emp.getTaxaJurosMensal());
+                System.out.println(emp.getValorParcelas());
+            }
+        }
+
+    }
+
+    //getters
     public int getId () {
         return this.id;
     }
-
     public String getNome() {
         return nome;
     }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getCpf() {
         return cpf;
     }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
     public double getRenda() {
         return renda;
     }
-
-    public void setRenda(double renda) {
-        this.renda = renda;
-    }
-
     public boolean isEmpAtivo() {
         return empAtivo;
-    }
-
-    public void setEmpAtivo(boolean empAtivo) {
-        this.empAtivo = empAtivo;
     }
 }

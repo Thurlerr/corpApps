@@ -11,11 +11,14 @@
 <body>
     <form action="${pageContext.request.contextPath}/veloster" method="POST">
         <label for="name">Nome</label>
-        <input type="text" id="name">
+        <input type="text" name="nome">
+
         <label for="cpf">CPF</label>
-        <input type="text" id="cpf">
-        <label for="">renda</label>
-        <input type="text" id="renda">
+        <input type="text" name="cpf">
+
+        <label for="renda">renda</label>
+        <input type="text" name="renda">
+
         <button type="submit">Simular</button>
     </form>
 </body>

@@ -1,7 +1,7 @@
 package com.model;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Banco {
     private String nome;
@@ -19,7 +19,7 @@ public class Banco {
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
     
     
