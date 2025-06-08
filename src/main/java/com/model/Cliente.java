@@ -2,8 +2,8 @@ package com.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cliente {
-    public static int contadorId = 0;
+public class Cliente { //adicionar data de nascimento e condição para verificar se soliciante é maior de 18 / e formatar data para padrão brasileiro
+    public static int contadorId = 0; //amarrar no banco de dados
     private final int id;
     private String nome = "";
     private String cpf = "";
@@ -25,27 +25,27 @@ public class Cliente {
         emprestimos.add(emprestimo);
     }
 
+    
+    // public String verDadosEmprestimo(){
+    //     if (emprestimos.isEmpty()){
+    //         System.out.println("Nenhum empréstimo registrado para o cliente.");
+    //     }else{
+    //         for (Emprestimo emp : emprestimos) {
+    //             emp.getNomeBanco();
+    //             emp.getValorDesejado();
+    //             emp.getParcelas();
+    //             emp.getCET();
+    //             emp.getTaxaJurosMensal();
+    //             emp.getValorParcelas();
+    //         }
+    //     }
+    // }
+    
+    //getters
     public List<Emprestimo> getEmprestimos() {
         return this.emprestimos;
     }
 
-    public void verDadosEmprestimo(){
-        if (emprestimos.isEmpty()){
-            System.out.println("Nenhum empréstimo registrado para o cliente.");
-        }else{
-            for (Emprestimo emp : emprestimos) {
-                System.out.println(emp.getNomeBanco());
-                System.out.println(emp.getValorDesejado());
-                System.out.println(emp.getParcelas());
-                System.out.println(emp.getCET());
-                System.out.println(emp.getTaxaJurosMensal());
-                System.out.println(emp.getValorParcelas());
-            }
-        }
-
-    }
-
-    //getters
     public int getId () {
         return this.id;
     }

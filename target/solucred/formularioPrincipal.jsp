@@ -19,6 +19,12 @@
         <label for="renda">renda</label>
         <input type="text" name="renda">
 
+        <label for="parcelas">parcelas desejadas</label>
+        <input type="number" name="parcelas">
+
+        <label for="valorDesejado">Valor desejado</label>
+        <input type="number" name="valorDesejado">
+
         <button type="submit">Simular</button>
     </form>
 </body>

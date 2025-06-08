@@ -13,7 +13,7 @@ public class Test {
         empDoGordola.simularEmprestimo(tenso, 200, 5);
         empDoGordola.contratarEmprestimo();
 
-        gordola.verDadosEmprestimo();
+        // gordola.verDadosEmprestimo();
 
         //fazer duas simulações diferentes e acionar contratarEmprestimo, depois, listas em Cliente, e em banco, para ver as informaçoes do empréstimo.
     }
