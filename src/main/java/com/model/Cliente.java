@@ -3,12 +3,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente { //adicionar data de nascimento e condição para verificar se soliciante é maior de 18 / e formatar data para padrão brasileiro
-    public static int contadorId = 0; //amarrar no banco de dados
     private final int id;
     private String nome = "";
     private String cpf = "";
     private double renda = 0.0;
-    private final boolean empAtivo = false; //não é usado?
     private final List<Emprestimo> emprestimos;
 
 
