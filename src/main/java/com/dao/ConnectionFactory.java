@@ -12,7 +12,11 @@ public class ConnectionFactory {
             e.printStackTrace();
         }
         try{
-            return DriverManager.getConnection("jdbc:mysql://localhost:3307/solucreddb");
+            String url = "jdbc:mysql://localhost:3306/solucreddb";
+            String user = "root";
+            String password = "admin";
+            return DriverManager.getConnection(url, user, password);
+
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

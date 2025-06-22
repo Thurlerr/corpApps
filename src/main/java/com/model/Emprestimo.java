@@ -33,14 +33,16 @@ public class Emprestimo {
         return true;
     }
 
-    public void simularEmprestimo (Banco banco, double valorDesejado, int parcelas){        
+    public String simularEmprestimo (Banco banco, double valorDesejado, int parcelas){        
         if (!this.calcularEmprestimo(banco, valorDesejado, parcelas)){ //se retornar true essa linha já chama o método
-            return;
+            return "cliente pobre";
         }
         //exibir resultado
         System.out.println("Taxa de juros mensal: " + this.taxaJurosMensal*100);
         System.out.println("Custo Efetivo Total (CET): " + this.CET);
         System.out.println(this.parcelas + " parcelas de R$: " + this.valorParcelas);
+        return "Taxa de juros mensal: " + this.taxaJurosMensal*100 + 
+        " Custo Efetivo Total (CET): " + this.CET + " parcelas de R$: " + this.valorParcelas;
     }
     //esse método "finaliza" a contratação do empréstimo, utilizando as ultimas sobrescritas dos atributos pela simulação para ser armazenada
     public void contratarEmprestimo (){

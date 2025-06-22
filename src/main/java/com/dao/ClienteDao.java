@@ -1,12 +1,12 @@
 package com.dao;
-import com.model.Cliente;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.model.Cliente;
 
 
 public class ClienteDao {
@@ -63,7 +63,7 @@ public class ClienteDao {
         ResultSet rs = stmt.executeQuery();
         Cliente cliente = null;
 
-        List<Cliente>listaClientes = new ArrayList<Cliente>();
+        List<Cliente>listaClientes = new ArrayList<>();
         while(rs.next()){
         cliente = new Cliente ();
         cliente.setId(rs.getInt("id"));
@@ -75,6 +75,5 @@ public class ClienteDao {
         stmt.close();
         con.close();
         return listaClientes;
-    
     }
 }

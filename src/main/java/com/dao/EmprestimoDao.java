@@ -1,4 +1,6 @@
-package com.dao;
+/* package com.dao;
+
+import com.model.Cliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,6 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.model.Emprestimo;
+
 public class EmprestimoDao {
         private Connection con;
 
@@ -14,12 +18,17 @@ public class EmprestimoDao {
         this.con = ConnectionFactory.getConnection();
     } //
         
-    public void inserir(EmprestimoDao emprestimo) throws SQLException{
-        String sql = "insert into emprestimo(nome, cpf, renda) values(?, ?, ?)";
+     public void inserir(Emprestimo emprestimo) throws SQLException {
+        String sql = "INSERT INTO emprestimo (idCliente, idBanco, banco, valorDesejado, parcelas, cet, taxaJurosMensal, valorParcelas) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement stmt = con.prepareStatement(sql);
-        stmt.setString(1, emprestimo.getNome());
-        stmt.setString(1, emprestimo.getCpf());
-        stmt.setDouble(1, emprestimo.getRenda());
+        stmt.setLong(1, emprestimo.getIdCliente());
+        stmt.setLong(2, emprestimo.getIdBanco());
+        stmt.setString(3, emprestimo.getBanco());
+        stmt.setDouble(4, emprestimo.getValorDesejado());
+        stmt.setInt(5, emprestimo.getParcelas());
+        stmt.setDouble(6, emprestimo.getCet());
+        stmt.setDouble(7, emprestimo.getTaxaJurosMensal());
+        stmt.setDouble(8, emprestimo.getValorParcelas());
         stmt.execute();
         stmt.close();
         con.close();
@@ -76,3 +85,4 @@ public class EmprestimoDao {
     
     }
 }
+ */
