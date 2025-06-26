@@ -20,8 +20,8 @@ public class ClienteDao {
         String sql = "insert into cliente(nome, cpf, renda) values(?, ?, ?)";
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setString(1, cliente.getNome());
-        stmt.setString(1, cliente.getCpf());
-        stmt.setDouble(1, cliente.getRenda());
+        stmt.setString(2, cliente.getCpf());
+        stmt.setDouble(3, cliente.getRenda());
         stmt.execute();
         stmt.close();
         con.close();
@@ -57,7 +57,7 @@ public class ClienteDao {
     }
 
     public List<Cliente>listarTodos() throws SQLException {
-        String sql = "select id , nome FROM cliente";
+        String sql = "select id , nome, cpf, renda FROM cliente";
         PreparedStatement stmt = con.prepareStatement(sql);
         
         ResultSet rs = stmt.executeQuery();

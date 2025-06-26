@@ -59,13 +59,12 @@
     </style>
 </head>
 <body>
-
     <h1>Bem-vindo ao SoluCred</h1>
 
     <div class="section">
         <h2>Cadastrar Cliente</h2>
         <p>Nesta seção, você poderá cadastrar um novo cliente. O cadastro é necessário para que ele possa contratar um empréstimo futuramente.</p>
-        <form action="${pageContext.request.contextPath}/CadastroCliente.jsp">
+        <form action="${pageContext.request.contextPath}/view/cadastroCliente.jsp">
             <button type="submit">Ir para Cadastro</button>
         </form>
     </div>
@@ -73,7 +72,7 @@
     <div class="section">
         <h2>Simular Empréstimo</h2>
         <p>Simule um empréstimo rapidamente, sem cadastro. Você verá os valores de parcelas, taxas e o crédito disponível de forma prática.</p>
-        <form action="${pageContext.request.contextPath}/formSimulacao.jsp">
+        <form action="${pageContext.request.contextPath}/view/simular.jsp">
             <button type="submit">Simular Empréstimo</button>
         </form>
     </div>
@@ -81,7 +80,7 @@
     <div class="section">
         <h2>Contratar Empréstimo</h2>
         <p>Clientes cadastrados podem prosseguir com a contratação oficial do empréstimo, a partir de uma simulação previamente realizada.</p>
-        <form action="${pageContext.request.contextPath}/formContratacao.jsp">
+        <form action="${pageContext.request.contextPath}/view/contratarEmprestimo.jsp">
             <button type="submit">Contratar Empréstimo</button>
         </form>
     </div>

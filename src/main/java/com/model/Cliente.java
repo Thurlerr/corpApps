@@ -10,7 +10,7 @@ public class Cliente { //adicionar data de nascimento e condição para verifica
     private List<Emprestimo> emprestimos;
 
     public Cliente (){
-
+        this.emprestimos = new ArrayList<>();
     };
     public Cliente (String nome, String cpf, double renda) {
         this.nome = nome;

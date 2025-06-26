@@ -14,7 +14,7 @@ public class ConnectionFactory {
         try{
             String url = "jdbc:mysql://localhost:3306/solucreddb";
             String user = "root";
-            String password = "admin";
+            String password = "";
             return DriverManager.getConnection(url, user, password);
 
         } catch (SQLException e) {
