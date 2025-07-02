@@ -12,14 +12,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-//separar servlets
-//um servlet com dopost que lida com a parte de emprestimo
+
 @WebServlet("/CadastroClienteServlet")
 public class CadastroClienteServlet extends HttpServlet {
 
     public CadastroClienteServlet () {
         super();
-        System.out.println("servlet instanciado");
     }
     @Override
     public void doPost (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

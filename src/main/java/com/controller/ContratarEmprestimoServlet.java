@@ -15,6 +15,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+
+//faz a mesma coisa que o  BuscarClienteServlet? exportar comentario que documenta
 @WebServlet("/ContratarEmprestimoServlet")
 public class ContratarEmprestimoServlet extends HttpServlet {
     @Override

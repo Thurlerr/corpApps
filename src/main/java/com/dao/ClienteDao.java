@@ -1,12 +1,12 @@
 package com.dao;
+import com.model.Cliente;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.model.Cliente;
 
 
 public class ClienteDao {
@@ -28,7 +28,7 @@ public class ClienteDao {
     }
     
     public void excluir (int id) throws SQLException{
-        String sql = "delete * from cliente where id = ?";
+        String sql = "delete from cliente where id = ?";
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setInt(1, id);
         stmt.executeQuery();
@@ -36,7 +36,7 @@ public class ClienteDao {
         con.close();
     }
 
-    public Cliente listar (int id) throws SQLException{
+    public Cliente listarUm (int id) throws SQLException{
         String sql = "SELECT id, nome, cpf, renda FROM cliente WHERE id = ?";
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setInt(1, id);
@@ -56,14 +56,15 @@ public class ClienteDao {
     return cliente;
     }
 
+
     public List<Cliente>listarTodos() throws SQLException {
-        String sql = "select id , nome, cpf, renda FROM cliente";
+        String sql = "select id , nome FROM cliente";
         PreparedStatement stmt = con.prepareStatement(sql);
         
         ResultSet rs = stmt.executeQuery();
         Cliente cliente = null;
 
-        List<Cliente>listaClientes = new ArrayList<>();
+        List<Cliente>listaClientes = new ArrayList<Cliente>();
         while(rs.next()){
         cliente = new Cliente ();
         cliente.setId(rs.getInt("id"));
@@ -75,5 +76,6 @@ public class ClienteDao {
         stmt.close();
         con.close();
         return listaClientes;
+    
     }
 }
