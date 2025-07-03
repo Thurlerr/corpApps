@@ -1,0 +1,17 @@
+http://localhost:8080/solucred/view/paginaPrincipal.jsp
+
+
+testar funcionalidade 1
+POST para http://localhost:8080/solucred/api/
+header content-type e app/json
+body 
+{
+   
+  "nome": "Joana",
+  "cpf": "11122233344",
+  "renda": 4800.50
+}
+
+testar funcionalidade 2
+GET para http://localhost:8080/solucred/listarClientesJson
+GET para http://localhost:8080/solucred/buscarClienteJson?cpf=12
