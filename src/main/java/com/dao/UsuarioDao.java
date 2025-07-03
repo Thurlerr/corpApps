@@ -33,4 +33,18 @@ public class UsuarioDao {
         con.close();
         return usuario;
     }
+
+    public void inserir(Usuario usuario) throws SQLException {
+    String sql = "INSERT INTO usuario (login, senha, cor_fundo, cor_fonte) VALUES (?, ?, ?, ?)";
+    PreparedStatement stmt = con.prepareStatement(sql);
+    stmt.setString(1, usuario.getLogin());
+    stmt.setString(2, usuario.getSenha()); // criptografar com BCrypt
+    stmt.setString(3, usuario.getCorFundo());
+    stmt.setString(4, usuario.getCorFonte());
+
+    stmt.executeUpdate();
+    stmt.close();
+    con.close();
+}
+
 }

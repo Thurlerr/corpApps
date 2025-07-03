@@ -35,12 +35,14 @@
 
         .box {
             background: #fff;
+            color: <%= corFonte %>; 
             padding: 30px;
             max-width: 600px;
             margin: auto;
             border-radius: 10px;
             box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
         }
+
 
         h1 {
             text-align: center;
@@ -77,6 +79,12 @@
         <button>Ver Empréstimos Ativos</button>
         <button>Contratar Novo Empréstimo</button>
         <button>Falar com o Gerente</button>
+    </div>
+
+    <div class="section">
+        <form action="${pageContext.request.contextPath}/view/paginaPrincipal.jsp">
+            <button type="submit">Pagina inicial</button>
+        </form>
     </div>
 </div>
 </body>

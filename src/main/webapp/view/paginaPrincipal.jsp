@@ -93,5 +93,9 @@
         </form>
     </div>
 
+    <form action="${pageContext.request.contextPath}/view/cadastroUsuario.jsp" style="margin-top: 10px;">
+    <button type="submit">Cadastrar Login de Usuario</button>
+</form>
+
 </body>
 </html>
