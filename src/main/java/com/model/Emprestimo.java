@@ -54,6 +54,11 @@ public class Emprestimo {
     }
 
     //getters
+    public Cliente getCliente() {
+        return this.cliente;
+    }
+
+
     public String getNomeBanco() {
         return banco.getNome();
     }
