@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/simulacaoServlet")
+@WebServlet("/SimulacaoServlet")
 public class SimulacaoServlet extends HttpServlet {
 
     @Override

@@ -1,4 +1,4 @@
-/* package com.dao;
+ /*package com.dao;
 
 import com.model.Cliente;
 
@@ -35,7 +35,7 @@ public class EmprestimoDao {
     }
     
     public void excluir (int id) throws SQLException{
-        String sql = "delete * from cliente where id = ?";
+        String sql = "delete from cliente where id = ?";
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setInt(1, id);
         stmt.executeQuery();
@@ -85,4 +85,4 @@ public class EmprestimoDao {
     
     }
 }
- */
+*/

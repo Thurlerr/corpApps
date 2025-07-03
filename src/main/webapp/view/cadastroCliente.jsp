@@ -1,12 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
- <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro de Cliente</title>
     <style>
         body {
             background-image: url('./sean-pollock-PhYq704ffdA-unsplash.jpg');
@@ -70,7 +70,21 @@
             border-radius: 6px;
             color: #005bb5;
         }
+
+        .extra-options {
+            margin-top: 30px;
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
+    <script>
+        function toggleOptions() {
+            const options = document.getElementById("extraOptions");
+            options.classList.toggle("hidden");
+        }
+    </script>
 </head>
 <body>
     <form action="${pageContext.request.contextPath}/CadastroClienteServlet" method="POST">
@@ -83,10 +97,28 @@
 
         <button type="submit">Cadastrar</button>
     </form>
+
     <c:if test="${not empty nomeCliente}">
-        <div>
-            ${nomeCliente}
+        <div class="message">
+            Cliente ${nomeCliente} cadastrado com sucesso!
         </div>
     </c:if>
+
+    <div class="extra-options">
+        <button onclick="toggleOptions()">Mais opções</button>
+
+        <div id="extraOptions" class="hidden">
+            <form action="${pageContext.request.contextPath}/BuscarTodosClientesServlet" method="GET" style="margin-top: 20px;">
+                <button type="submit">Listar Todos os Clientes</button>
+            </form>
+
+            <form action="${pageContext.request.contextPath}/ExcluirClienteServlet" method="POST" style="margin-top: 20px;">
+                <label for="cpfExcluir">CPF do Cliente a Excluir</label>
+                <input type="text" id="cpfExcluir" name="cpf">
+                <button type="submit">Excluir Cliente</button>
+            </form>
+        </div>
+        <a href="${pageContext.request.contextPath}/view/paginaPrincipal.jsp" class="botao-voltar">Voltar à página principal</a>
+    </div>
 </body>
 </html>

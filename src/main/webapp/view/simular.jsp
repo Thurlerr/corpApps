@@ -77,7 +77,7 @@
 
 <div class="container">
     <h1>Simular Empréstimo</h1>
-    <form action="${pageContext.request.contextPath}/simulacaoServlet" method="POST">
+    <form action="${pageContext.request.contextPath}/SimulacaoServlet" method="POST">
         <label for="banco">Banco</label>
         <select id="banco" name="banco">
             <option value="Totem">Totem</option>

@@ -1,12 +1,12 @@
 package com.dao;
-import com.model.Cliente;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.model.Cliente;
 
 
 public class ClienteDao {
@@ -27,13 +27,14 @@ public class ClienteDao {
         con.close();
     }
     
-    public void excluir (int id) throws SQLException{
-        String sql = "delete from cliente where id = ?";
+    public boolean excluir (String cpf) throws SQLException{
+        String sql = "delete from cliente where cpf = ?";
         PreparedStatement stmt = con.prepareStatement(sql);
-        stmt.setInt(1, id);
-        stmt.executeQuery();
+        stmt.setString(1, cpf);
+        int linhasAfetadas = stmt.executeUpdate();
         stmt.close();
         con.close();
+        return linhasAfetadas > 0;
     }
 
     public Cliente listarUm (int id) throws SQLException{
@@ -58,7 +59,7 @@ public class ClienteDao {
 
 
     public List<Cliente>listarTodos() throws SQLException {
-        String sql = "select id , nome FROM cliente";
+        String sql = "SELECT id, nome, cpf, renda FROM cliente";
         PreparedStatement stmt = con.prepareStatement(sql);
         
         ResultSet rs = stmt.executeQuery();
