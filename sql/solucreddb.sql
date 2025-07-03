@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03/07/2025 às 11:49
+-- Tempo de geração: 03/07/2025 às 15:43
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -71,6 +71,27 @@ CREATE TABLE `emprestimo` (
   `valorParcelas` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `login` varchar(50) NOT NULL,
+  `senha` varchar(60) NOT NULL,
+  `cor_fundo` varchar(20) NOT NULL,
+  `cor_fonte` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `login`, `senha`, `cor_fundo`, `cor_fonte`) VALUES
+(1, 'admin', '123', '#ffffff', '#000000');
+
 --
 -- Índices para tabelas despejadas
 --
@@ -96,6 +117,13 @@ ALTER TABLE `emprestimo`
   ADD KEY `idBanco` (`idBanco`);
 
 --
+-- Índices de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `login` (`login`);
+
+--
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -116,6 +144,12 @@ ALTER TABLE `cliente`
 --
 ALTER TABLE `emprestimo`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para tabelas despejadas

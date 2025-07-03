@@ -85,5 +85,13 @@
         </form>
     </div>
 
+    <div class="section">
+        <h2>Login</h2>
+        <p>Para acessar suas informações pessoais e realizar operações, faça login no sistema.</p>
+        <form action="${pageContext.request.contextPath}/view/paginaLogin.jsp">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
 </body>
 </html>
