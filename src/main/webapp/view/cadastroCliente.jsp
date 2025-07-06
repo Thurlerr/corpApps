@@ -108,7 +108,7 @@
         <button onclick="toggleOptions()">Mais opções</button>
 
         <div id="extraOptions" class="hidden">
-            <form action="${pageContext.request.contextPath}/BuscarTodosClientesServlet" method="GET" style="margin-top: 20px;">
+            <form action="${pageContext.request.contextPath}/ListarClientesServlet" method="GET" style="margin-top: 20px;">
                 <button type="submit">Listar Todos os Clientes</button>
             </form>
 

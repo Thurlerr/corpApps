@@ -1,17 +1,18 @@
 package com.controller;
 
-import com.dao.ClienteDao;
-import com.model.Cliente;
-import com.google.gson.Gson;
-
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.List;
+
+import com.dao.ClienteDao;
+import com.google.gson.Gson;
+import com.model.Cliente;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/buscarClienteJson")
 public class BuscarClienteJsonServlet extends HttpServlet {
@@ -27,13 +28,7 @@ public class BuscarClienteJsonServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             ClienteDao dao = new ClienteDao();
             Cliente clienteEncontrado = null;
-
-            for (Cliente c : dao.listarTodos()) {
-                if (c.getCpf().equalsIgnoreCase(cpf)) {
-                    clienteEncontrado = c;
-                    break;
-                }
-            }
+            clienteEncontrado = dao.buscarPorCpf(cpf);
 
             if (clienteEncontrado != null) {
                 Gson gson = new Gson();

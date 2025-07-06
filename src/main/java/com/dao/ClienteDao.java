@@ -57,6 +57,25 @@ public class ClienteDao {
     return cliente;
     }
 
+    public Cliente buscarPorCpf(String cpf) throws SQLException {
+    String sql = "SELECT * FROM cliente WHERE cpf = ?";
+    PreparedStatement stmt = con.prepareStatement(sql);
+
+        stmt.setString(1, cpf);
+        ResultSet rs = stmt.executeQuery();
+
+        Cliente cliente = null;
+        if (rs.next()) {
+            cliente = new Cliente();
+            cliente.setId(rs.getInt("id"));
+            cliente.setNome(rs.getString("nome"));
+            cliente.setCpf(rs.getString("cpf"));
+            cliente.setRenda(rs.getDouble("renda"));
+        }
+    
+    return cliente;
+}
+
 
     public List<Cliente>listarTodos() throws SQLException {
         String sql = "SELECT id, nome, cpf, renda FROM cliente";

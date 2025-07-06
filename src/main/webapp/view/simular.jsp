@@ -8,7 +8,7 @@
     <style>
         body {
             background-image: url('./photo-1639781895346-054825a58d4a.avif');
-            background-size: contain;
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;

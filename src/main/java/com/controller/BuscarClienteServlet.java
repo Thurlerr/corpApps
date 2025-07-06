@@ -27,12 +27,8 @@ public class BuscarClienteServlet extends HttpServlet {
 
         try {
             Cliente clienteEncontrado = null;
-            for (Cliente c : dao.listarTodos()) {
-                if (c.getCpf().equalsIgnoreCase(cpf)) {
-                    clienteEncontrado = c;
-                    break;
-                }
-            }
+            clienteEncontrado = dao.buscarPorCpf(cpf); // substituição feita aqui
+
 
             if (clienteEncontrado != null) {
                 request.setAttribute("cliente", clienteEncontrado);
