@@ -39,7 +39,7 @@ public class SimulacaoServlet extends HttpServlet {
         request.setAttribute("simulacaoResultado", resultado);
 
         // Encaminhar de volta para a página JSP
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/Simular.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/simular.jsp");
         dispatcher.forward(request, response);
     }
 }
