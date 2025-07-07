@@ -92,6 +92,13 @@
             <button type="submit">Login</button>
         </form>
     </div>
+    <div class="section">
+        <h2>JSON</h2>
+        <p>Lista e insere JSONs.</p>
+        <form action="${pageContext.request.contextPath}/view/paginaJson.jsp">
+            <button type="submit">JSON</button>
+        </form>
+    </div>
 
     <form action="${pageContext.request.contextPath}/view/cadastroUsuario.jsp" style="margin-top: 10px;">
     <button type="submit">Cadastrar Login de Usuario</button>
