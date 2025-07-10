@@ -32,6 +32,10 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("usuario", usuario);
                 session.setAttribute("token", System.currentTimeMillis()); // simples token numérico
 
+                
+                System.out.println("ID da sessão geral: " + session.getId());
+
+
                 // Cookies com preferências
                 Cookie fundo = new Cookie("corFundo", usuario.getCorFundo());
                 Cookie fonte = new Cookie("corFonte", usuario.getCorFonte());
@@ -45,12 +49,12 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("view/inicioLogin.jsp");
             } else {
                 request.setAttribute("erro", "Login ou senha inválidos.");
-                request.getRequestDispatcher("view/login.jsp").forward(request, response);
+                request.getRequestDispatcher("view/paginaLogin.jsp").forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             request.setAttribute("erro", "Erro ao conectar com banco de dados.");
-            request.getRequestDispatcher("view/login.jsp").forward(request, response);
+            request.getRequestDispatcher("view/paginaLogin.jsp").forward(request, response);
         }
     }
 }

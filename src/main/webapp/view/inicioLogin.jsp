@@ -46,7 +46,7 @@
 
         h1 {
             text-align: center;
-            color: #0073e6;
+            color: <%= corFonte %>;
         }
 
         .buttons {
@@ -59,7 +59,7 @@
         .buttons button {
             padding: 12px;
             background-color: #0073e6;
-            color: white;
+            color: <%= corFonte %>;
             border: none;
             border-radius: 6px;
             font-size: 16px;
