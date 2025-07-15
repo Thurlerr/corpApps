@@ -43,7 +43,7 @@ public class ContratarEmprestimoServlet extends HttpServlet {
             if (cliente == null) {
                 request.setAttribute("resultado", "Cliente não encontrado.");
             } else {
-                // Define os bancos fixos
+                // Define os bancos fixos, mover esses caras pra model depois
                 if ("Totem".equalsIgnoreCase(nomeBanco)) {
                     banco = new Banco("Totem", 15.0);
                 } else {

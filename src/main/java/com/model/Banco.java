@@ -3,7 +3,7 @@ package com.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Banco { //talvez nem todo o sistema deveria ter acesso, colocar para package?
+public class Banco { 
     private String nome;
     private double txJurosAnual;
     private List<Emprestimo> emprestimo;

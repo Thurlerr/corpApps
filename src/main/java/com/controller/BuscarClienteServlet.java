@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-//utiliza o listarTodos pra buscar um só, filtrando pelo CPF (otimizar para usar o ListarUm), servlet utilizado em: 
+//utiliza o listarTodos pra buscar um só, filtrando pelo CPF, servlet utilizado em: 
 //contratarEmprestimo.jsp: para buscar o cliente que irá contratar o emprestimo
 
 @WebServlet("/BuscarClienteServlet")

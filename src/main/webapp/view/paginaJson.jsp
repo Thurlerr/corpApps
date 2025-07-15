@@ -29,7 +29,7 @@
     <a href="${pageContext.request.contextPath}/view/paginaPrincipal.jsp">Voltar</a>
 
       <script>
-        // Submeter o formulário com post
+        // envia o form com post
         document.getElementById("form-post").addEventListener("submit", async function(e) {
             e.preventDefault();
 

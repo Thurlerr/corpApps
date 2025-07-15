@@ -20,22 +20,22 @@ public class SimulacaoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        //  Coleta dos dados do formulário
+        //Coleta dos dados do form
         String nomeBanco = request.getParameter("banco");
         double valorDesejado = Double.parseDouble(request.getParameter("valorDesejado"));
         int parcelas = Integer.parseInt(request.getParameter("parcelas"));
 
-        //  Criar cliente temporário para simular
-        Cliente clienteFake = new Cliente("Simulação", "000.000.000-00", 5000.00); // renda fictícia
+        //Cria o cliente temp
+        Cliente clienteFake = new Cliente("Simulação", "000.000.000-00", 5000.00); // renda fictícia alta pra nao dar merda
 
-        // Criar banco com nome e taxa fictícia (ajustável depois com repositório)
+        // Criar banco com nome e taxa fictícia, os dois cadastrados nao entram aqui ainda
         Banco banco = new Banco(nomeBanco, 20.0); // 20% ao ano
 
         // Simular empréstimo
         Emprestimo emprestimo = new Emprestimo(clienteFake);
         String resultado = emprestimo.simularEmprestimo(banco, valorDesejado, parcelas);
 
-        // Passar resultado para o JSP
+        //Passar resultado para o JSP
         request.setAttribute("simulacaoResultado", resultado);
 
         // Encaminhar de volta para a página JSP

@@ -19,21 +19,21 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+                //recebe o login e senha daquela tela la de login
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
-
+                //ve se tem no banco de dados
         UsuarioDao dao = new UsuarioDao();
         try {
             Usuario usuario = dao.buscarPorLoginSenha(login, senha);
 
             if (usuario != null) {
-                HttpSession session = request.getSession();
-                session.setAttribute("usuario", usuario);
+                HttpSession session = request.getSession(); //esse cara cria ou recupera sessao, se o usuario existir
+                session.setAttribute("usuario", usuario); //sala o obj do usuario
                 session.setAttribute("token", System.currentTimeMillis()); // simples token numérico
 
                 
-                System.out.println("ID da sessão geral: " + session.getId());
+                System.out.println("ID da sessão geral: " + session.getId());//debgar esse desgraçado
 
 
                 // Cookies com preferências
